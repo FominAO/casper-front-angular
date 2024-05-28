@@ -7,6 +7,7 @@ import { DeviceNewComponent } from './device-new/device-new.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 
 export const routes: Routes = [
+    {path: '', redirectTo: 'login'},
     {
         path: 'login', component: AuthComponent
     },
