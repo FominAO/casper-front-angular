@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 export class ChangableValueComponent {
   @Input() value!: any;
   @Input() label!: string;
+  @Input() disabled: boolean = false;
   @Input() units: string | undefined = '';
 
   @Output() edited = new EventEmitter();

@@ -1,0 +1,17 @@
+<mat-card>
+    <mat-card-header>
+      <app-edit-name
+        [name]="backupPower.name || 'Резервное питание'"
+        label="Название"
+      ></app-edit-name>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-divider></mat-divider>
+        <div class="info-row">
+            <span class="info-row__label">На резервном питании: </span>
+            <span class="info-row__value"
+              ><app-refresh-value>{{backupPower.status === 'online' ? 'Да' : 'Нет'}}</app-refresh-value></span
+            >
+          </div>
+    </mat-card-content>
+  </mat-card>

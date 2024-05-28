@@ -19,13 +19,13 @@ export class AppComponent {
   user$ = this.profileUpdateService.state$;
 
   constructor(private readonly profileUpdateService: ProfileUpdateService) {
-    this.profileUpdateService.setUresState();
+    this.profileUpdateService.setUresState({});
   }
 
   operatorMode() {
     this.profileUpdateService.setOperatorState();
   }
   userMode() {
-    this.profileUpdateService.setUresState();
+    this.profileUpdateService.setUresState({});
   }
 }

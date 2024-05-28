@@ -1,22 +1,21 @@
 import { Component, Input } from '@angular/core';
-import { SecurityAlarm } from '../../devices/security-alarm.interface';
+import { BackupPower } from '../../devices/backup-power.interface';
+import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { ChangableStatusComponent } from '../../ui/changable-status/changable-status.component';
 import { ChangableValueComponent } from '../../ui/changable-value/changable-value.component';
 import { EditNameComponent } from '../../ui/edit-name/edit-name.component';
 import { ToggleComponent } from '../../ui/toggle/toggle.component';
-import { CommonModule } from '@angular/common';
 import { RefreshValueComponent } from '../../ui/refresh-value/refresh-value.component';
 
 @Component({
-  selector: 'app-security-alarm',
+  selector: 'app-backup-power',
   standalone: true,
   imports: [CommonModule, EditNameComponent, MatDividerModule, ChangableStatusComponent, MatCardModule, ChangableValueComponent, ToggleComponent, RefreshValueComponent],
-  templateUrl: './security-alarm.component.html',
-  styleUrl: './security-alarm.component.less'
+  templateUrl: './backup-power.component.html',
+  styleUrl: './backup-power.component.less'
 })
-export class SecurityAlarmComponent {
-  @Input() securityAlarm!: SecurityAlarm;
-  @Input() editMode: boolean = false;
+export class BackupPowerComponent {
+  @Input() backupPower!: BackupPower;
 }

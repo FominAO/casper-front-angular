@@ -11,6 +11,7 @@
       <app-security-alarm *ngIf="device.securityAlarm" [securityAlarm]="device.securityAlarm"></app-security-alarm>
       <app-security-siren *ngIf="device.securitySiren" [securitySiren]="device.securitySiren"></app-security-siren>
       <app-setups [setups]="device.setups ? device.setups : []"></app-setups>
+      <app-backup-power *ngIf="device.backupPower" [backupPower]="device.backupPower"></app-backup-power>
     </div>
     <button mat-flat-button>Сохранить</button>
   </ng-container>

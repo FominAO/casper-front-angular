@@ -13,6 +13,7 @@ import { HeatingEquipmentComponent } from './heating-equipment/heating-equipment
 import { SecurityAlarmComponent } from './security-alarm/security-alarm.component';
 import { SecuritySirenComponent } from './security-siren/security-siren.component';
 import { SetupsComponent } from './setups/setups.component';
+import { BackupPowerComponent } from './backup-power/backup-power.component';
 
 @Component({
   selector: 'app-device-edit',
@@ -27,7 +28,8 @@ import { SetupsComponent } from './setups/setups.component';
     HeatingEquipmentComponent,
     SecurityAlarmComponent,
     SecuritySirenComponent,
-    SetupsComponent
+    SetupsComponent,
+    BackupPowerComponent
   ],
   templateUrl: './device-edit.component.html',
   styleUrl: './device-edit.component.less',

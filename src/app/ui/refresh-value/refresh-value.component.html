@@ -1,0 +1,13 @@
+<mat-spinner class="spinner" diameter="20" *ngIf="refreshing$ | async"></mat-spinner>
+<ng-container *ngIf="!(refreshing$ | async)">
+    <ng-content></ng-content>
+    <button
+      class="refresh-button"
+      mat-icon-button
+      (click)="refresh()"
+      
+    >
+      <mat-icon [color]="'primary'">refresh</mat-icon>
+    </button>
+</ng-container>
+

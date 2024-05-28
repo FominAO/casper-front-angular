@@ -67,7 +67,12 @@ const devices: Device[] = [
                 status: 'offline',
                 inputNumber: 3,
             },
-        ]
+        ],
+        backupPower: {
+            id: '1',
+            name: 'Резервный аккумулятор',
+            status: 'online',
+        }
     },
     {
         id: '2',

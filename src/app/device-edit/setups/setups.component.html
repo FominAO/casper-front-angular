@@ -14,7 +14,15 @@
           ></app-changable-status>
           <div class="info-row">
               <span class="info-row__label">Вход подключения: </span>
-              <span class="info-row__value">{{setup.inputNumber}}</span>
+              <span class="info-row__value"  *ngIf="!editMode">{{setup.inputNumber}}</span>
+              <mat-form-field *ngIf="editMode">
+                <mat-label>Номер входа</mat-label>
+                <mat-select>
+                  @for (input of [1,2,3,4,5,6]; track input) {
+                    <mat-option [value]="input">{{input}}</mat-option>
+                  }
+                </mat-select>
+              </mat-form-field>
           </div>
           <mat-divider></mat-divider>
         </div>
@@ -24,5 +32,8 @@
         >Нет подключенных устройств</span
       ></ng-template
     >
+    <button *ngIf="editMode" class="new-setup" mat-fab (click)="add()">
+        <mat-icon>add</mat-icon>
+    </button>
   </mat-card-content>
 </mat-card>

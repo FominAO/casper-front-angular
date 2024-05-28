@@ -1,6 +1,17 @@
 <h4>Добавление нового прибора</h4>
 
-<mat-form-field class="example-full-width">
-    <mat-label>Название</mat-label>
-    <input matInput placeholder="Название прибора" value="Новый прибор">
-</mat-form-field>
+
+<div class="info">
+    <mat-form-field class="full-width">
+        <mat-label>Название</mat-label>
+        <input matInput placeholder="Название прибора" [(ngModel)]="device.name">
+    </mat-form-field>
+    <app-heating-equipment *ngIf="device.heatingEquipment" [heatingEquipment]="device.heatingEquipment" [editMode]="true"></app-heating-equipment>
+    <app-security-alarm *ngIf="device.securityAlarm" [securityAlarm]="device.securityAlarm" [editMode]="true"></app-security-alarm>
+    <app-security-siren *ngIf="device.securitySiren" [securitySiren]="device.securitySiren"></app-security-siren>
+    <app-setups [setups]="device.setups ? device.setups : []" [editMode]="true"></app-setups>
+    <app-backup-power *ngIf="device.backupPower" [backupPower]="device.backupPower"></app-backup-power>
+
+</div>
+<br>
+<button mat-flat-button (click)="add()">Сохранить</button>

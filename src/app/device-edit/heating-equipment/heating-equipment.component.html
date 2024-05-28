@@ -11,10 +11,10 @@
       [status]="heatingEquipment.status"
       [label]="heatingEquipment.name"
     ></app-changable-status>
-    <div class="info-row">
+    <div class="info-row" *ngIf="heatingEquipment.temperature">
       <span class="info-row__label">Показания температуры: </span>
       <span class="info-row__value"
-        >{{ heatingEquipment.temperature }}{{ heatingEquipment.units }}</span
+        ><app-refresh-value>{{ heatingEquipment.temperature }}{{ heatingEquipment.units }}</app-refresh-value></span
       >
     </div>
     <div class="info-row">
@@ -36,18 +36,39 @@
     </div>
     <div class="info-row">
       <span class="info-row__label">Вход подключения: </span>
-      <span class="info-row__value">{{ heatingEquipment.inputNumber }}</span>
+      <span class="info-row__value" *ngIf="!editMode">
+        {{ heatingEquipment.inputNumber }}
+        
+      </span>
+      <mat-form-field *ngIf="editMode">
+        <mat-label>Номер входа</mat-label>
+        <mat-select>
+          @for (input of [1,2,3,4,5,6]; track input) {
+            <mat-option [value]="input">{{input}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
     </div>
     <div class="info-row">
       <span class="info-row__label">Максимальное доступное значение: </span>
       <span class="info-row__value"
-        >{{ heatingEquipment.maxValue }}{{ heatingEquipment.units }}</span
+        ><app-changable-value
+        [value]="heatingEquipment.userRange?.[0]"
+        [units]="heatingEquipment.units"
+        [disabled]="!editMode"
+        label="Нижняя граница отслеживания"
+      ></app-changable-value></span
       >
     </div>
     <div class="info-row">
       <span class="info-row__label">Минимальное доступное значение: </span>
       <span class="info-row__value"
-        >{{ heatingEquipment.minValue }}{{ heatingEquipment.units }}</span
+        ><app-changable-value
+        [value]="heatingEquipment.userRange?.[0]"
+        [units]="heatingEquipment.units"
+        [disabled]="!editMode"
+        label="Нижняя граница отслеживания"
+      ></app-changable-value></span
       >
     </div>
   </mat-card-content>

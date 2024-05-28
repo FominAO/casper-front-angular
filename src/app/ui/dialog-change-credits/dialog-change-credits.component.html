@@ -1,0 +1,24 @@
+<h2 mat-dialog-title>{{data.title}}</h2>
+<mat-dialog-content>
+  <p *ngIf="data.question">{{data.question}}</p>
+  <mat-form-field>
+    <mat-label>Введите старый пароль</mat-label>
+    <input matInput type="password">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Введите новый логин</mat-label>
+    <input matInput [value]="data.inputData" [(ngModel)]="data.inputData">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Введите новый пароль</mat-label>
+    <input matInput type="password">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Повторите новый пароль</mat-label>
+    <input matInput type="password">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button class="warn" (click)="onNoClick()">Отмена</button>
+  <button mat-button [mat-dialog-close]="data.inputData" cdkFocusInitial>{{data.okText ? data.okText : 'Сохранить'}}</button>
+</mat-dialog-actions>

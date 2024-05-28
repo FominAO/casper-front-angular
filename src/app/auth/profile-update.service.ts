@@ -1,14 +1,23 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-const defaultUser = {
+interface User {
+  id: string;
+  login: string;
+  name: string;
+  isOperator: boolean;
+}
+
+const defaultUser: User = {
   id: '1fg6-uh38-9ib1-3086-dd23',
+  login: 'Ivanov_1976',
   name: 'Иванов Е.В.',
   isOperator: false,
 }
 
-const operator = {
+const operator: User = {
   id: '5wgg-9087-w4gh-8y34-qwf0',
+  login: 'admin',
   name: 'Оператор',
   isOperator: true,
 }
@@ -18,7 +27,7 @@ const operator = {
 })
 export class ProfileUpdateService {
 
-  state$ = new BehaviorSubject(defaultUser);
+  state$: BehaviorSubject<User> = new BehaviorSubject(defaultUser);
 
   constructor() { }
 
@@ -26,10 +35,11 @@ export class ProfileUpdateService {
     this.state$.next(operator)
   }
 
-  setUresState(name?: string) {
-    this.state$.next(name ? {
-      name,
+  setUresState( user: Partial<User>) {
+    this.state$.next(user.name ? {
+      name: user.name || 'Иванов Е.В.',
       id: '1fg6-uh38-9ib1-3086-dd23',
+      login: user.login || 'Ivanov_1976',
       isOperator: false,
     } : defaultUser)
   }
