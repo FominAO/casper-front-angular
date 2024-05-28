@@ -1,0 +1,8 @@
+<h4><app-edit-name [name]="(user$ | async)?.name || ''" label="Имя" (edited)="editName($event)"></app-edit-name></h4>
+
+Логин: Ivanov_1978
+<br>
+Пароль: ********
+<br>
+<br>
+<button mat-flat-button >Изменить логин/пароль</button>

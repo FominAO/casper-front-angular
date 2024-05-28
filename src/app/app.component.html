@@ -1,0 +1,14 @@
+<mat-toolbar>
+  <span>Casper Front</span>
+  <div class="gap"></div>
+  <a mat-button [routerLink]="['/devices']" routerLinkActive="active">Приборы</a>
+  <a mat-button [routerLink]="['/profile']" routerLinkActive="active">Личный кабинет</a>
+  <div class="spacer"></div>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" (click)="operatorMode()">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <span (click)="userMode()">{{(user$ | async)?.name}}</span>
+</mat-toolbar>
+<div class="outlet">
+  <router-outlet />
+</div>

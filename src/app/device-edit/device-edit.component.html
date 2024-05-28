@@ -1,0 +1,17 @@
+<div class="device" *ngIf="device$ | async as device">
+  <ng-container *ngIf="device">
+    <h4><app-edit-name [name]="device.name || ''" label="Название"></app-edit-name></h4>
+    <app-changable-status
+      [status]="device.status"
+      [label]="device.name"
+    ></app-changable-status>
+
+    <div class="info">
+      <app-heating-equipment *ngIf="device.heatingEquipment" [heatingEquipment]="device.heatingEquipment"></app-heating-equipment>
+      <app-security-alarm *ngIf="device.securityAlarm" [securityAlarm]="device.securityAlarm"></app-security-alarm>
+      <app-security-siren *ngIf="device.securitySiren" [securitySiren]="device.securitySiren"></app-security-siren>
+      <app-setups [setups]="device.setups ? device.setups : []"></app-setups>
+    </div>
+    <button mat-flat-button>Сохранить</button>
+  </ng-container>
+</div>

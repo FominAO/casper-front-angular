@@ -1,0 +1,28 @@
+<mat-card>
+  <mat-card-header> Устройства </mat-card-header>
+  <mat-card-content>
+    <mat-divider></mat-divider>
+    <ng-container *ngIf="setups.length; else noSetups">
+        <div class="setup" *ngFor="let setup of setups">
+            <app-edit-name
+            [name]="setup.name || 'Устройство'"
+            label="Название"
+          ></app-edit-name>
+          <app-changable-status
+            [status]="setup.status"
+            [label]="setup.name"
+          ></app-changable-status>
+          <div class="info-row">
+              <span class="info-row__label">Вход подключения: </span>
+              <span class="info-row__value">{{setup.inputNumber}}</span>
+          </div>
+          <mat-divider></mat-divider>
+        </div>
+    </ng-container>
+    <ng-template #noSetups
+      ><span class="info-row__label"
+        >Нет подключенных устройств</span
+      ></ng-template
+    >
+  </mat-card-content>
+</mat-card>

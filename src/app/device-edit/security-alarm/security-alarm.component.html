@@ -1,0 +1,32 @@
+<mat-card>
+    <mat-card-header>
+      <app-edit-name
+        [name]="securityAlarm.name || 'Охранная сигнализация'"
+        label="Название"
+      ></app-edit-name>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-divider></mat-divider>
+      <app-changable-status
+        [status]="securityAlarm.status"
+        [label]="securityAlarm.name"
+      ></app-changable-status>
+      Выходы охранной сигнализации:
+      <mat-divider></mat-divider>
+      
+      <div *ngFor="let input of securityAlarm.alarmInputs">
+        <app-edit-name
+        [name]="input.name || 'Охранный выход'"
+        label="Название"
+      ></app-edit-name>
+      <app-changable-status
+        [status]="input.status"
+        [label]="input.name"
+      ></app-changable-status>
+      <span class="info-row__label">Звуковой сигнал: </span><app-toggle [value]="input.sound" [disabled]="false"></app-toggle> <br>
+      <span class="info-row__label">Размыкание: </span><app-toggle [value]="input.switchState" firstTitle="Замкнут" secondTitle="Разомкнут"></app-toggle>
+      <mat-divider></mat-divider>
+      </div>
+
+    </mat-card-content>
+  </mat-card>

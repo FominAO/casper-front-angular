@@ -1,0 +1,18 @@
+<mat-card class="device">
+    <mat-card-header *ngIf="header">
+        <ng-template [ngTemplateOutlet]="header"></ng-template>
+    </mat-card-header>
+    <mat-card-content *ngIf="content">
+        <ng-template [ngTemplateOutlet]="content"></ng-template>
+    </mat-card-content>
+    <mat-card-actions *ngIf="actions && actions.length; else linkTpl" [align]="'end'">
+        <ng-container *ngFor="let action of actions">
+            <ng-template [ngTemplateOutlet]="action"></ng-template>
+        </ng-container>
+    </mat-card-actions>
+    <ng-template #linkTpl>
+        <ng-container *ngIf="link">
+            <a mat-flat-button [routerLink]="link.route">linl.text</a>
+        </ng-container>
+    </ng-template>
+</mat-card>

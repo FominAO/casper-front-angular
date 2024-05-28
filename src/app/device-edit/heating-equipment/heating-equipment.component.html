@@ -1,0 +1,54 @@
+<mat-card>
+  <mat-card-header>
+    <app-edit-name
+      [name]="heatingEquipment.name || 'Отопительное оборудование'"
+      label="Название"
+    ></app-edit-name>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-divider></mat-divider>
+    <app-changable-status
+      [status]="heatingEquipment.status"
+      [label]="heatingEquipment.name"
+    ></app-changable-status>
+    <div class="info-row">
+      <span class="info-row__label">Показания температуры: </span>
+      <span class="info-row__value"
+        >{{ heatingEquipment.temperature }}{{ heatingEquipment.units }}</span
+      >
+    </div>
+    <div class="info-row">
+      <span class="info-row__label">Диапазон отслеживания: </span>
+      <span class="info-row__value"
+        >от
+        <app-changable-value
+          [value]="heatingEquipment.userRange?.[0]"
+          [units]="heatingEquipment.units"
+          label="Нижняя граница отслеживания"
+        ></app-changable-value>
+        до
+        <app-changable-value
+          [value]="heatingEquipment.userRange?.[1]"
+          [units]="heatingEquipment.units"
+          label="Верхняя граница отслеживания"
+        ></app-changable-value
+      ></span>
+    </div>
+    <div class="info-row">
+      <span class="info-row__label">Вход подключения: </span>
+      <span class="info-row__value">{{ heatingEquipment.inputNumber }}</span>
+    </div>
+    <div class="info-row">
+      <span class="info-row__label">Максимальное доступное значение: </span>
+      <span class="info-row__value"
+        >{{ heatingEquipment.maxValue }}{{ heatingEquipment.units }}</span
+      >
+    </div>
+    <div class="info-row">
+      <span class="info-row__label">Минимальное доступное значение: </span>
+      <span class="info-row__value"
+        >{{ heatingEquipment.minValue }}{{ heatingEquipment.units }}</span
+      >
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,15 @@
+<mat-card>
+    <mat-card-header>
+      <app-edit-name
+        [name]="securitySiren.name || 'Охранная сирена'"
+        label="Название"
+      ></app-edit-name>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-divider></mat-divider>
+      <app-changable-status
+        [status]="securitySiren.status"
+        [label]="securitySiren.name"
+      ></app-changable-status>
+    </mat-card-content>
+  </mat-card>

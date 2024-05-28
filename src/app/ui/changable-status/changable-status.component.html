@@ -1,0 +1,7 @@
+<span class="status-label">Статус: </span><span>{{ status === 'online' ? 'включен' : 'выключен' }}</span><button
+  class="edit-button"
+  mat-icon-button
+  (click)="edit()"
+>
+  <mat-icon [color]="status === 'online' ? 'primary' : 'basic'">power_settings_new</mat-icon>
+</button>
