@@ -11,11 +11,12 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { DialogService } from '../../ui/dialog.service';
+import { RefreshValueComponent } from '../../ui/refresh-value/refresh-value.component';
 
 @Component({
   selector: 'app-setups',
   standalone: true,
-  imports: [CommonModule, EditNameComponent, MatDividerModule, ChangableStatusComponent, MatCardModule, ChangableValueComponent, ToggleComponent, MatSelectModule, MatIconModule, MatButtonModule],
+  imports: [CommonModule, EditNameComponent, MatDividerModule, ChangableStatusComponent, MatCardModule, ChangableValueComponent, ToggleComponent, MatSelectModule, MatIconModule, MatButtonModule, RefreshValueComponent],
   templateUrl: './setups.component.html',
   styleUrl: './setups.component.less'
 })

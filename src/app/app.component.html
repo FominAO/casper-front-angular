@@ -1,9 +1,10 @@
 <mat-toolbar>
-  <span>Casper Front</span>
+  <span>Casper</span>
   <div class="gap"></div>
   <a mat-button [routerLink]="['/devices']" routerLinkActive="active">Приборы</a>
   <a mat-button [routerLink]="['/profile']" routerLinkActive="active">Личный кабинет</a>
   <div class="spacer"></div>
+  <a mat-button [routerLink]="['/notifications']" routerLinkActive="active" (contextmenu)="genNotify()">Оповещения <button mat-flat-button class="badge" *ngIf="(notifications$ | async)?.length as length">+{{length}}</button></a>
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" (click)="operatorMode()">
     <mat-icon>account_circle</mat-icon>
   </button>

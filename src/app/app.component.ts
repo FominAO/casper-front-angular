@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { ProfileUpdateService } from './auth/profile-update.service';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
+import { NotificationsService } from './notifications/notifications.service';
 
 @Component({
   selector: 'app-root',
@@ -17,8 +18,9 @@ export class AppComponent {
   title = 'casper-front';
 
   user$ = this.profileUpdateService.state$;
+  notifications$ = this.notificationsService.notifications$;
 
-  constructor(private readonly profileUpdateService: ProfileUpdateService) {
+  constructor(private readonly profileUpdateService: ProfileUpdateService, private readonly notificationsService: NotificationsService) {
     this.profileUpdateService.setUresState({});
   }
 
@@ -27,5 +29,8 @@ export class AppComponent {
   }
   userMode() {
     this.profileUpdateService.setUresState({});
+  }
+  genNotify() {
+    this.notificationsService.generateNotify();
   }
 }

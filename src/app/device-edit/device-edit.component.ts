@@ -14,6 +14,7 @@ import { SecurityAlarmComponent } from './security-alarm/security-alarm.componen
 import { SecuritySirenComponent } from './security-siren/security-siren.component';
 import { SetupsComponent } from './setups/setups.component';
 import { BackupPowerComponent } from './backup-power/backup-power.component';
+import { RefreshValueComponent } from '../ui/refresh-value/refresh-value.component';
 
 @Component({
   selector: 'app-device-edit',
@@ -29,7 +30,8 @@ import { BackupPowerComponent } from './backup-power/backup-power.component';
     SecurityAlarmComponent,
     SecuritySirenComponent,
     SetupsComponent,
-    BackupPowerComponent
+    BackupPowerComponent,
+    RefreshValueComponent
   ],
   templateUrl: './device-edit.component.html',
   styleUrl: './device-edit.component.less',

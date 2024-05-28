@@ -7,9 +7,12 @@
     </mat-card-header>
     <mat-card-content>
         <mat-divider></mat-divider>
-      <app-changable-status
-        [status]="securitySiren.status"
-        [label]="securitySiren.name"
-      ></app-changable-status>
+        <div class="info-row">
+          <app-changable-status
+            [status]="securitySiren.status"
+            [label]="securitySiren.name"
+          ></app-changable-status>
+          <app-refresh-value></app-refresh-value>
+        </div>
     </mat-card-content>
   </mat-card>

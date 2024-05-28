@@ -1,10 +1,14 @@
 <div class="device" *ngIf="device$ | async as device">
   <ng-container *ngIf="device">
     <h4><app-edit-name [name]="device.name || ''" label="Название"></app-edit-name></h4>
-    <app-changable-status
+    <div class="info-row">
+      <app-changable-status
       [status]="device.status"
       [label]="device.name"
     ></app-changable-status>
+    <app-refresh-value></app-refresh-value>
+    </div>
+
 
     <div class="info">
       <app-heating-equipment *ngIf="device.heatingEquipment" [heatingEquipment]="device.heatingEquipment"></app-heating-equipment>
@@ -13,6 +17,7 @@
       <app-setups [setups]="device.setups ? device.setups : []"></app-setups>
       <app-backup-power *ngIf="device.backupPower" [backupPower]="device.backupPower"></app-backup-power>
     </div>
+    <br>
     <button mat-flat-button>Сохранить</button>
   </ng-container>
 </div>

@@ -7,11 +7,12 @@ import { ChangableStatusComponent } from '../../ui/changable-status/changable-st
 import { ChangableValueComponent } from '../../ui/changable-value/changable-value.component';
 import { EditNameComponent } from '../../ui/edit-name/edit-name.component';
 import { ToggleComponent } from '../../ui/toggle/toggle.component';
+import { RefreshValueComponent } from '../../ui/refresh-value/refresh-value.component';
 
 @Component({
   selector: 'app-security-siren',
   standalone: true,
-  imports: [CommonModule, EditNameComponent, MatDividerModule, ChangableStatusComponent, MatCardModule, ChangableValueComponent, ToggleComponent],
+  imports: [CommonModule, EditNameComponent, MatDividerModule, ChangableStatusComponent, MatCardModule, ChangableValueComponent, ToggleComponent, RefreshValueComponent],
   templateUrl: './security-siren.component.html',
   styleUrl: './security-siren.component.less'
 })

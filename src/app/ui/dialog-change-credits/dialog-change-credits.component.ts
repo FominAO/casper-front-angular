@@ -14,6 +14,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { DialogData } from '../dialog/dialog-data.interface';
 import { CommonModule } from '@angular/common';
+import { MatDividerModule } from '@angular/material/divider';
 
 @Component({
   selector: 'app-dialog-change-credits',
@@ -28,6 +29,7 @@ import { CommonModule } from '@angular/common';
     MatDialogContent,
     MatDialogActions,
     MatDialogClose,
+    MatDividerModule
   ],
   templateUrl: './dialog-change-credits.component.html',
   styleUrl: './dialog-change-credits.component.less'

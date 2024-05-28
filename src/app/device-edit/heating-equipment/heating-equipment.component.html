@@ -7,10 +7,13 @@
   </mat-card-header>
   <mat-card-content>
     <mat-divider></mat-divider>
-    <app-changable-status
-      [status]="heatingEquipment.status"
-      [label]="heatingEquipment.name"
-    ></app-changable-status>
+    <div class="info-row">
+      <app-changable-status
+        [status]="heatingEquipment.status"
+        [label]="heatingEquipment.name"
+      ></app-changable-status><app-refresh-value></app-refresh-value>
+
+    </div>
     <div class="info-row" *ngIf="heatingEquipment.temperature">
       <span class="info-row__label">Показания температуры: </span>
       <span class="info-row__value"
@@ -33,6 +36,7 @@
           label="Верхняя граница отслеживания"
         ></app-changable-value
       ></span>
+      <app-refresh-value></app-refresh-value>
     </div>
     <div class="info-row">
       <span class="info-row__label">Вход подключения: </span>

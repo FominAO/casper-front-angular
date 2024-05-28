@@ -8,10 +8,13 @@
             [name]="setup.name || 'Устройство'"
             label="Название"
           ></app-edit-name>
-          <app-changable-status
-            [status]="setup.status"
-            [label]="setup.name"
-          ></app-changable-status>
+          <div class="info-row">
+            <app-changable-status
+              [status]="setup.status"
+              [label]="setup.name"
+            ></app-changable-status>
+            <app-refresh-value></app-refresh-value>
+          </div>
           <div class="info-row">
               <span class="info-row__label">Вход подключения: </span>
               <span class="info-row__value"  *ngIf="!editMode">{{setup.inputNumber}}</span>

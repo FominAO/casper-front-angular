@@ -7,10 +7,13 @@
   </mat-card-header>
   <mat-card-content>
     <mat-divider></mat-divider>
-    <app-changable-status
-      [status]="securityAlarm.status"
-      [label]="securityAlarm.name"
-    ></app-changable-status>
+    <div class="info-row">
+      <app-changable-status
+        [status]="securityAlarm.status"
+        [label]="securityAlarm.name"
+      ></app-changable-status>
+      <app-refresh-value></app-refresh-value>
+    </div>
     Выходы охранной сигнализации:
     <mat-divider></mat-divider>
 
@@ -19,10 +22,14 @@
         [name]="input.name || 'Охранный выход'"
         label="Название"
       ></app-edit-name>
-      <app-changable-status
-        [status]="input.status"
-        [label]="input.name"
-      ></app-changable-status>
+      <div class="info-row">
+        <app-changable-status
+          [status]="input.status"
+          [label]="input.name"
+        ></app-changable-status>
+        <app-refresh-value></app-refresh-value>
+
+      </div>
       <div class="info-row">
           <span class="info-row__label">Звуковой сигнал: </span
           ><app-toggle [value]="input.sound" [disabled]="editMode"></app-toggle>
