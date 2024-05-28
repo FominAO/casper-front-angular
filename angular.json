@@ -57,6 +57,23 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "git": {
+              "outputPath": "docs/",
+              "baseHref": "https://fominao.github.io/casper-front-angular/",
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
             }
           },
           "defaultConfiguration": "production"
