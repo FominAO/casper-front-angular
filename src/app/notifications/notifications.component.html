@@ -1,18 +1,20 @@
-<div
-  class="block"
-  *ngIf="notificatios$ | async as notifications; else noNotifications"
->
-  <mat-card class="notify" *ngFor="let notify of notifications">
-    <mat-card-header>
-      {{ notify.title }}
-    </mat-card-header>
-    <mat-card-actions
-        [align]="'end'"
-      ><button mat-flat-button (click)="remove(notify.id)">
-        Ок
-      </button></mat-card-actions
-    >
-  </mat-card>
-</div>
+<ng-container *ngIf="notificatios$ | async as notifications; else noNotifications">
+  <div
+    class="block"
+    *ngIf="notifications.length; else noNotifications"
+  >
+    <mat-card class="notify" *ngFor="let notify of notifications">
+      <mat-card-header>
+        {{ notify.title }}
+      </mat-card-header>
+      <mat-card-actions
+          [align]="'end'"
+        ><button mat-flat-button (click)="remove(notify.id)">
+          Ок
+        </button></mat-card-actions
+      >
+    </mat-card>
+  </div>
+</ng-container>
 
 <ng-template #noNotifications>Нет новых оповещений</ng-template>
